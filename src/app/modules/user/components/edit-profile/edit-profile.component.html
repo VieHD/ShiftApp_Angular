@@ -1,0 +1,70 @@
+<div class="form-container">
+    <form (ngSubmit)="onEditProfile()" [formGroup]="editProfileForm" class="edit-profile-form">
+
+      <div class="page-title">Edit Profile:</div>
+
+      <mat-form-field class="edit-profile-full-width">
+        <input matInput type="email" [formControlName]="'emailControl'" placeholder="Email (disabled)" />
+      </mat-form-field>
+      <mat-form-field class="edit-profile-full-width">
+        <input matInput type="text" [formControlName]="'userNameControl'" placeholder="Username" />
+        <mat-error *ngIf="editProfileForm.invalid">{{getErrorMessageUserName()}}</mat-error>
+      </mat-form-field>
+  
+      <table class="edit-profile-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="edit-profile-full-width">
+              <input
+                matInput
+                [formControlName]="'firstNameControl'"
+                placeholder="First Name"
+                type="text"
+                
+              />
+              <mat-error *ngIf="editProfileForm.invalid">{{getErrorMessageFirstName()}}</mat-error>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="edit-profile-full-width">
+              <input
+                matInput
+                [formControlName]="'lastNameControl'"
+                placeholder="Last Name"
+                type="text"
+              />
+              <mat-error *ngIf="editProfileForm.invalid">{{getErrorMessageLastName()}}</mat-error>
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+      <table class="edit-profile-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="edit-profile-full-width">
+              <input matInput type="number" [formControlName]="'ageControl'" placeholder="Age" />
+              <mat-error *ngIf="editProfileForm.invalid">{{getErrorMessageAge()}}</mat-error>
+            </mat-form-field>
+          </td>
+          <td>
+                <mat-form-field class="edit-profile-full-width">
+                  <mat-label>Title</mat-label>
+                  <mat-select [formControlName]="'titleListControl'">
+                    <mat-option>--</mat-option>
+                    <mat-option *ngFor="let title of titleList" [value]="title">
+                      {{ title }}
+                    </mat-option>
+                  </mat-select>
+                  <mat-error>Title Required</mat-error>
+                </mat-form-field>
+          </td>
+        </tr>
+      </table>
+      <p>
+        <mat-form-field class="edit-profile-full-width">
+          <textarea matInput type="text" placeholder="Adress" [formControlName]="'adressControl'"></textarea>
+        </mat-form-field>
+      </p>
+      <button mat-stroked-button color="primary">Edit Profile</button>
+    </form>
+  </div>

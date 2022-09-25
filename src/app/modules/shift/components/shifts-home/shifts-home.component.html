@@ -1,0 +1,61 @@
+<div class="shift-home-container">
+<div class="filter-container">
+  <div class="filter-div">
+    <mat-form-field color="primary">
+      <mat-label>Search by Shift Name</mat-label>
+      <input #input matInput />
+    </mat-form-field>
+  </div>
+
+  <div class="filter-div">
+    <mat-form-field color="primary">
+      <mat-label>Search by WorkPlace</mat-label>
+      <input #inputWork matInput />
+    </mat-form-field>
+  </div>
+
+  <div class="filter-div">
+    <mat-form-field color="primary">
+      <mat-label>Search by Date</mat-label>
+      <mat-date-range-input [rangePicker]="picker" [formGroup]="dateRange">
+        <input matStartDate formControlName="start" placeholder="Start date" />
+        <input matEndDate formControlName="end" placeholder="End date" />
+      </mat-date-range-input>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-date-range-picker
+        #picker
+        (closed)="onCloseDatePicker()"
+      ></mat-date-range-picker>
+      <button matSuffix mat-icon-button aria-label="Clear" (click)="onClear()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+</div>
+
+<table
+  mat-table
+  [dataSource]="localShifts"
+  class="mat-elevation-z8 shift-table"
+>
+  <ng-container
+    *ngFor="let column of columns"
+    [matColumnDef]="column.columnDef"
+  >
+    <th class="table-header" mat-header-cell *matHeaderCellDef>
+      {{ column.header }}
+    </th>
+    <td mat-cell *matCellDef="let row" class="table-cell">
+      {{ column.cell(row) }}
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr
+    class="table-row"
+    mat-row
+    *matRowDef="let row; columns: displayedColumns"
+    (click)="updateShift(row)"
+  ></tr>
+</table>
+</div>

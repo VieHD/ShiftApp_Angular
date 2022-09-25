@@ -1,0 +1,38 @@
+
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 35%;
+}
+
+mat-form-field {
+  display: block;
+  width: 20vw;
+}
+button{
+  width: 40%;
+  min-width: 6em;
+  margin-top: 1em;
+}
+.button-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 20%;
+}
+.login-title{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 20%;
+  font-size: xx-large;
+  font-weight: bold;
+  color: rgb(128,90,196);
+}
+.error-box{
+  height: 2em;
+  color: red;
+}

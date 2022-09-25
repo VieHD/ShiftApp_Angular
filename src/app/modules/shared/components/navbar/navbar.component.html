@@ -1,0 +1,31 @@
+<div class="navbar-container">
+  <div class="logo-container">W-CORP LOGO</div>
+
+  <div class="href-container">
+    <a
+    [routerLink]="['/shifts']"
+    routerLinkActive="active-link"
+    [routerLinkActiveOptions]="{ exact: true }"
+      >Home</a
+    >
+    <a
+      [routerLink]="['/shifts/myShifts']"
+      routerLinkActive="active-link"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      My Shifts</a
+    >
+    <a [routerLink]="['/shifts/new']" routerLinkActive="active-link">
+      Add New Shift</a
+    >
+    <a (click)="onLogoutClick()">Logout</a>
+    <div class="hello-user">
+      <p class="hello-user-p">Welcome</p>
+      <a
+        [routerLink]="['/user/edit-profile', userId]"
+        routerLinkActive="active-link"
+        >{{ helloUser }}</a
+      >
+    </div>
+  </div>
+</div>

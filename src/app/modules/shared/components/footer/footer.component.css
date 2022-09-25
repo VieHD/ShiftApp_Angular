@@ -1,0 +1,42 @@
+.footer-container{
+    height: 11em;
+    background-color: rgb(128,90,196);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+}
+.links-container{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}
+.followus-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+}
+.links-title{
+    font-size: 1.3em;
+    margin-bottom: 1em;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+.active-link{
+    text-decoration: underline;
+}
+.logo-container{
+    display: flex;
+    justify-content: space-between;
+}
+svg{
+    width: 50px;
+    height: 50px;
+}
+.logo-link{
+    width: 100px;
+    text-align: center;
+}

@@ -1,0 +1,36 @@
+.shift-table {
+    width: 80%;
+    margin: 3em auto;
+  }
+  .filter-container{
+    display: flex;
+    width: 50%;
+    margin-top: 5em;
+    justify-content: center;
+  }
+
+  .table-header{
+    background-color:rgb(128,90,196) ;
+    color: white;
+    font-size: 1.15em;
+  }
+  .table-row:hover{
+    background-color: #dbceed;
+  }
+
+  .filter-container{
+    margin-left: 15vw;
+    display: flex;
+    flex-wrap: wrap;
+    width: 85vw;
+    justify-content:flex-start;
+  }
+  .filter-div{
+    margin-left: 3em;
+  }
+  .shift-home-container{
+    /* height: 69.7%; */
+    min-height: 69.7%;
+    max-height: fit-content;
+  }
+

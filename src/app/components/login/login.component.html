@@ -1,0 +1,20 @@
+
+<div class="login-title">My Shift App</div>
+
+<form (submit)="onLoginClick()" [formGroup]="loginForm">
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input type="email" matInput [formControlName]="'email'" placeholder="Ex. pat@example.com" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input type="password" matInput [formControlName]="'password'" placeholder="password" />
+  </mat-form-field>
+  <div class="error-box">{{errorMessage}}</div>
+  <div class="button-container">
+  <button mat-stroked-button color="primary">Log In</button>
+  <button mat-stroked-button color="primary" type="button" (click)="onRegisterClick()"> Register</button>
+  </div>
+</form>
+
+<div class="login-title" *ngIf="errorReason==='unauthorized'">You're session expired, Please relog!</div>

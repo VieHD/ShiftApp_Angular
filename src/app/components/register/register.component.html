@@ -1,0 +1,43 @@
+<div class="register-title">My Shift App</div>
+
+<form (submit)="onRegisterClick()" [formGroup]="registerForm">
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input
+      type="email"
+      matInput
+      [formControlName]="'email'"
+      placeholder="Ex. pat@example.com"
+  />
+  <mat-error *ngIf="registerForm.invalid">{{getErrorMessageEmail()}}</mat-error>
+</mat-form-field>
+  <mat-form-field>
+    <mat-label>Username</mat-label>
+    <input
+      type="text"
+      matInput
+      [formControlName]="'userName'"
+      placeholder="Username"
+  />
+  <mat-error *ngIf="registerForm.invalid">{{getErrorMessageUserName()}}</mat-error>
+</mat-form-field>
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input
+      type="password"
+      matInput
+      [formControlName]="'password'"
+      placeholder="Ex. User1!"
+    />
+    <mat-error *ngIf="registerForm.invalid">{{getErrorMessagePassword()}}</mat-error>
+  </mat-form-field>
+  <div class="error-box">{{errorMessage}}</div>
+  <button
+    mat-stroked-button
+    color="primary"
+    [disabled]="this.registerForm.invalid"
+  >
+    Register
+  </button>
+  <a [routerLink]="['/auth/login']"> Already have an account?</a>
+</form>

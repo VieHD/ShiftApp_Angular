@@ -1,0 +1,41 @@
+div {  
+    background-color: rgb(128,90,196);
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.3em;
+    cursor: pointer;
+}
+.navbar-container{
+    display: flex;
+    justify-content: space-between;
+    height: 5em;
+}
+.logo-container{
+    width: 20%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+}
+.href-container{
+    width: 60%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.active-link{
+    text-decoration: underline;
+}
+.hello-user{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.hello-user-p{
+    margin: auto 0;
+    color: white;
+    font-size: 1.3em;
+}

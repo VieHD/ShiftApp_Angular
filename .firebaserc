@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "shift-app-6e06d": {
+      "hosting": {
+        "shift-project": [
+          "shift-app-6e06d"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "shift-app-6e06d"
+  }
+}

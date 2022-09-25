@@ -1,0 +1,45 @@
+mat-card {
+    width: 300px;
+    margin-bottom: 10px;
+  }
+  
+  form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 35%;
+  }
+  
+  mat-form-field {
+    display: block;
+    width: 20vw;
+  }
+  
+  .register-title{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 20%;
+    font-size: xx-large;
+    font-weight: bold;
+    color: rgb(128,90,196);
+  }
+  
+  button{
+    width: 6%;
+    min-width: 6em;
+    margin-top: 1em;
+  }
+  
+  a{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    color: rgb(128,90,196);
+    margin-top: 2em;
+  }
+  .error-box{
+    height: 2em;
+    color: red;
+  }

@@ -1,0 +1,23 @@
+.shift-table {
+    width: 80%;
+    margin: 3em auto;
+  }
+  .table-header{
+    background-color:rgb(128,90,196) ;
+    color: white;
+    font-size: 1.15em;
+  }
+  .table-title{
+    display: flex;
+    justify-content: center;
+    margin: 1em auto;
+    font-size: xx-large;
+    font-weight: bold;
+    color: rgb(128,90,196);
+  }
+
+  .shift-home-container{
+    /* height: 69.7%; */
+    min-height: 73.6%;
+    max-height: fit-content;
+  }

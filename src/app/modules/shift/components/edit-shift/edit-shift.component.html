@@ -1,0 +1,73 @@
+<div class="form-container">
+    <form (ngSubmit)="onEditShift()" [formGroup]="editShiftForm" class="new-shift-form">
+
+      <div class="page-title">Edit Shift:</div>
+
+      <mat-form-field class="new-shift-full-width">
+        <input matInput type="date" id="date" [formControlName]="'dateControl'" formControlName="date" placeholder="Shift Date" />
+        <mat-error>Please enter Shift Date</mat-error>
+      </mat-form-field>
+  
+      <table class="new-shift-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="new-shift-full-width">
+              <input
+                matInput
+                [formControlName]="'startTimeControl'"
+                placeholder="Shift Start Time"
+                type="time"
+              />
+              <mat-error>Please enter Shift Start Time</mat-error>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="new-shift-full-width">
+              <input
+                matInput
+                [formControlName]="'endTimeControl'"
+                placeholder="Shift End Time"
+                type="time"
+              />
+              <mat-error>Please enter Shift End Time</mat-error>
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+      <table class="new-shift-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="new-shift-full-width">
+              <input matInput [formControlName]="'shiftNameControl'" placeholder="Shift Name" />
+              <mat-error>Please enter the Shift Name</mat-error>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="new-shift-full-width">
+              <input matInput [formControlName]="'hourlyWageControl'" placeholder="Hourly Wage" />
+              <mat-error>Please enter the Hourly Wage</mat-error>
+            </mat-form-field>
+            
+          </td>
+        </tr>
+      </table>
+      <p>
+        <mat-form-field class="new-shift-full-width">
+          <mat-label>WorkPlace</mat-label>
+          <mat-select [formControlName]="'workPlaceControl'">
+            <mat-option>--</mat-option>
+            <mat-option *ngFor="let workPlace of workPlaces" [value]="workPlace">
+              {{ workPlace }}
+            </mat-option>
+          </mat-select>
+          <mat-error>Please choose a WorkPlace</mat-error>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field class="new-shift-full-width">
+          <textarea matInput placeholder="Comments" [formControlName]="'commentControl'"></textarea>
+        </mat-form-field>
+      </p>
+      <button mat-stroked-button color="primary">Edit Shift</button>
+    </form>
+  </div>
